@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
   get 'categories/aerospace'
+  get 'categories/biomedical'
+  get 'categories/chemical'
+  get 'categories/civil'
+  get 'categories/compeng'
+  get 'categories/compsci'
+  get 'categories/electrical'
+  get 'categories/engsci'
+  get 'categories/mechanical'
+  get 'categories/systems'
 
   get 'questions/index'
 
