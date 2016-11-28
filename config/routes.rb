@@ -23,10 +23,12 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
   get 'signup' => 'users#new'
   resources :users
+  resources :questions
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
   get 'categories' => 'static_pages#categories'
+  post 'questions', :to => 'categories#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
