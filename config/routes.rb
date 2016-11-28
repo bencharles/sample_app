@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'categories/aerospace'
+
   get 'questions/index'
 
   get 'sessions/new'
