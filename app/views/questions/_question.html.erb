@@ -1,5 +1,9 @@
 <li>
   <% if question != nil%>
-    <%= question.content %>
+    <% if question.content != nil %>
+      <%= question.content %>
+    <% else %>
+      There is no content
+    <% end %>
   <% end %>
 </li>

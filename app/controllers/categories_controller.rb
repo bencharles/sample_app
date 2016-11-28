@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   def aerospace
     @question = Question.new
-  	@questions = Question.find_by(category: "aerospace")
+    @questions = Question.where(category: "aerospace")
   end
 
   def biomedical
@@ -41,11 +41,12 @@ class CategoriesController < ApplicationController
   end
   
   def create
-    params[:question][:category] = "aerospace"
-    params[:question][:user_id] = current_user[:id]
-    @question = Question.new(params.require(:question).permit(:content, :category, :user_id))
+    @question = Question.new
+    @question[:content] = params[:question][:content]
+    @question[:category] = params[:category]
+    @question[:user_id] = current_user[:id]
     if @question.save
-      render 'categories/aerospace'
+      redirect_to :controller => 'categories', :action => params[:category]
     end
   end
 end

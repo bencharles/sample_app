@@ -1,8 +1,7 @@
-<% provide(:category, "aerospace") %>
 <h1>Aerospace Engineering</h1>
 <p>Ask any question regarding the Aerospace Engineering major here!</p>
-<%= form_for(@question, url: {controller: "categories", action: "create"}) do |f| %>
-  <%= f.label :content %>
+
+<%= form_for(@question, url: categories_create_path(category: "aerospace")) do |f| %>
   <%= f.text_field :content %>
   <%= f.submit "Ask!", class:"btn btn-primary" %>
 <% end %>

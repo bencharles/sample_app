@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  post 'categories/create' => 'categories#create'
   get 'categories/aerospace'
   get 'categories/biomedical'
   get 'categories/chemical'
