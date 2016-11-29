@@ -1,11 +1,11 @@
 <h1>Aerospace Engineering</h1>
-<p>Ask any question regarding the Aerospace Engineering major here!</p>
+<h4>Ask any question regarding the Aerospace Engineering major here!</h4>
 
 <%= form_for(@question, url: categories_create_path(category: "aerospace")) do |f| %>
-<div class="row" style="overflow: hidden;">
-  <%= f.text_field :content, :class=>"flexQuestions col-md-10" %>
-  <%= f.submit "Ask!", class:"flexQuestions btn btn-primary col-md-2" %>
-</div>
+  <div class="row" style="overflow: hidden;">
+    <%= f.text_field :content, :class=>"flexQuestions col-md-10" %>
+    <%= f.submit "Ask!", class:"flexQuestions btn btn-primary col-md-2" %>
+  </div>
 <% end %>
 
 <% if !@questions.nil? %>

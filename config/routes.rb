@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :answers
+  resources :users
+  resources :questions
+  post 'answers/create' => 'answers#create'
   post 'categories/create' => 'categories#create'
   get 'categories/aerospace'
   get 'categories/biomedical'
@@ -23,8 +27,6 @@ Rails.application.routes.draw do
   get 'about' => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
   get 'signup' => 'users#new'
-  resources :users
-  resources :questions
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'

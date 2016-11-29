@@ -10,8 +10,23 @@
         <%= question.content %> <% if @pullAnswers %> - <%= link_to(user.name, user) %> <% end %>
           
         <% if @pullAnswers %>
-          <%= text_field("answer", nil, :class=>"flexAnswers col-md-10") %>
-          <input type="button" name="commitAnswer" value="Answer" class="flexAnswers btn btn-primary col-md-2">
+          <% @answers = Answer.where(ques_id: question.id) %>
+          
+          <% if !@answers.nil? && @answers.count > 0 %>
+            <div style="margin-left: 15px;">
+                <%= render @answers %>
+            </div>
+          <% end %> 
+          
+          <div>
+            <%= form_for(@answer, url: answers_create_path(ques_id: question.id)) do |f| %>
+              <%= f.text_field :content, :class=>"flexAnswers col-md-10" %>
+              <%= f.submit "Answer", class:"flexAnswers btn btn-primary col-md-2" %>
+            <% end %>
+          </div>
+          
+          <%# <%= text_field("answer", nil, :class=>"flexAnswers col-md-10") %>
+          <%# <input type="button" name="commitAnswer" value="Answer" class="flexAnswers btn btn-primary col-md-2"> %>
         <% end %>
           
       <% if !@pullAnswers %>

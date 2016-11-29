@@ -2,51 +2,61 @@ class CategoriesController < ApplicationController
   before_action :logged_in_user
   
   def aerospace
+    @answer = Answer.new
     @question = Question.new
     @questions = Question.where(category: "aerospace")
   end
 
   def biomedical
+    @answer = Answer.new
     @question = Question.new
     @questions = Question.where(category: "biomedical")
   end
 
   def chemical
+    @answer = Answer.new
   	@question = Question.new
     @questions = Question.where(category: "chemical")
   end
 
   def civil
+    @answer = Answer.new
   	@question = Question.new
     @questions = Question.where(category: "civil")
   end
 
   def compeng
+    @answer = Answer.new
     @question = Question.new
     @questions = Question.where(category: "compeng")
   end
 
   def compsci
+    @answer = Answer.new
   	@question = Question.new
     @questions = Question.where(category: "compsci")
   end
 
   def electrical
+    @answer = Answer.new
   	@question = Question.new
     @questions = Question.where(category: "electrical")
   end
 
   def engsci
+    @answer = Answer.new
     @question = Question.new
     @questions = Question.where(category: "engsci")
   end
 
   def mechanical
+    @answer = Answer.new
   	@question = Question.new
     @questions = Question.where(category: "mechanical")
   end
 
   def systems
+    @answer = Answer.new
   	@question = Question.new
     @questions = Question.where(category: "systems")
   end
