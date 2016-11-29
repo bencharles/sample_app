@@ -60,6 +60,12 @@ class CategoriesController < ApplicationController
   	@question = Question.new
     @questions = Question.where(category: "systems")
   end
+
+  def sts
+    @answer = Answer.new
+    @question = Question.new
+    @questions = Question.where(category: "sts")
+  end
   
   def create
     @question = Question.new

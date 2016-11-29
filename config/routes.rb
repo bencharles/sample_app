@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'categories/engsci'
   get 'categories/mechanical'
   get 'categories/systems'
+  get 'categories/sts'
 
   get 'questions/index'
 
