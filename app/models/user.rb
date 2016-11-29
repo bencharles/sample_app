@@ -3,11 +3,13 @@ class User < ActiveRecord::Base
 	before_save { self.email = email.downcase}
 	validates :name, presence: true, length: { maximum: 50 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@(virginia.edu)/i
+    VALID_PASSWORD_REGEX = /(?=.*\d)(?=.*([a-z]|[A-Z]))([\x20-\x7E]){8,40}/
 	validates :email, presence: true, length: { maximum: 255},
 						format: {with: VALID_EMAIL_REGEX, message: "must be a UVA email" } ,
 						uniqueness: { case_sensitive: false }
 	has_secure_password
-	validates :password, presence: true, length: { minimum: 6}, allow_nil: true
+	validates :password, presence: true, length: { minimum: 6}, allow_nil: true,
+                        format: {with: VALID_PASSWORD_REGEX, message: "must contain a number and letter" } 
     has_many :questions
 
 	#returns the hash digest of the given string
