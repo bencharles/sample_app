@@ -1,43 +1,54 @@
 class CategoriesController < ApplicationController
+  before_action :logged_in_user
+  
   def aerospace
     @question = Question.new
     @questions = Question.where(category: "aerospace")
   end
 
   def biomedical
-  	@question = Question.find_by(category: "biomedical")
+    @question = Question.new
+    @questions = Question.where(category: "biomedical")
   end
 
   def chemical
-  	@question = Question.find_by(category: "chemical")
+  	@question = Question.new
+    @questions = Question.where(category: "chemical")
   end
 
   def civil
-  	@question = Question.find_by(category: "civil")
+  	@question = Question.new
+    @questions = Question.where(category: "civil")
   end
 
   def compeng
-  	@question = Question.find_by(category: "compeng")
+    @question = Question.new
+    @questions = Question.where(category: "compeng")
   end
 
   def compsci
-  	@question = Question.find_by(category: "compsci")
+  	@question = Question.new
+    @questions = Question.where(category: "compsci")
   end
 
   def electrical
-  	@question = Question.find_by(category: "electrical")
+  	@question = Question.new
+    @questions = Question.where(category: "electrical")
   end
 
   def engsci
-  	@question = Question.find_by(category: "engsci")
+    @question = Question.new
+    @questions = Question.where(category: "engsci")
   end
 
   def mechanical
-  	@question = Question.find_by(category: "mechanical")
+  	@question = Question.new
+    @questions = Question.where(category: "mechanical")
   end
 
   def systems
-  	@question = Question.find_by(category: "electrical")
+  	@question = Question.new
+    @questions = Question.where(category: "systems")
   end
   
   def create
@@ -49,4 +60,13 @@ class CategoriesController < ApplicationController
       redirect_to :controller => 'categories', :action => params[:category]
     end
   end
+  
+  private
+  
+    def logged_in_user
+      unless logged_in?
+        flash[:danger] = "Please log in."
+        redirect_to login_url
+      end
+    end
 end

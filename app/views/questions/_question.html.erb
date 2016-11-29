@@ -1,7 +1,22 @@
 <li>
   <% if question != nil%>
     <% if question.content != nil %>
-      <%= question.content %>
+      <% user = User.find(question.user_id) %>
+  
+      <% unless @pullAnswers %>
+        <a href='/categories/<%= question.category %>'>
+      <% end %>
+          
+        <%= question.content %> <% if @pullAnswers %> - <%= link_to(user.name, user) %> <% end %>
+          
+        <% if @pullAnswers %>
+          <%= text_field("answer", nil, :class=>"flexAnswers col-md-10") %>
+          <input type="button" name="commitAnswer" value="Answer" class="flexAnswers btn btn-primary col-md-2">
+        <% end %>
+          
+      <% if !@pullAnswers %>
+        </a>
+      <% end %>
     <% else %>
       There is no content
     <% end %>

@@ -2,12 +2,17 @@
 <p>Ask any question regarding the Aerospace Engineering major here!</p>
 
 <%= form_for(@question, url: categories_create_path(category: "aerospace")) do |f| %>
-  <%= f.text_field :content %>
-  <%= f.submit "Ask!", class:"btn btn-primary" %>
+<div class="row" style="overflow: hidden;">
+  <%= f.text_field :content, :class=>"flexQuestions col-md-10" %>
+  <%= f.submit "Ask!", class:"flexQuestions btn btn-primary col-md-2" %>
+</div>
 <% end %>
 
 <% if !@questions.nil? %>
-  <u1>
-    <%= render @questions %>
-  </u1>
+  <div>
+    <u1 class="questions">
+      <% @pullAnswers = true %>
+      <%= render @questions %>
+    </u1>
+  </div>
 <% end %> 

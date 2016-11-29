@@ -1,2 +1,18 @@
-<h1>Categories#mechanical</h1>
-<p>Find me in app/views/categories/mechanical.html.erb</p>
+<h1>Mechanical Engineering</h1>
+<p>Ask any question regarding the Mechanical Engineering major here!</p>
+
+<%= form_for(@question, url: categories_create_path(category: "mechanical")) do |f| %>
+<div class="row" style="overflow: hidden;">
+  <%= f.text_field :content, :class=>"flexQuestions col-md-10" %>
+  <%= f.submit "Ask!", class:"flexQuestions btn btn-primary col-md-2" %>
+</div>
+<% end %>
+
+<% if !@questions.nil? %>
+  <div>
+    <u1 class="questions">
+      <% @pullAnswers = true %>
+      <%= render @questions %>
+    </u1>
+  </div>
+<% end %> 

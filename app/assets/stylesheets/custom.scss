@@ -173,7 +173,7 @@ input, textarea, select, .uneditable-input {
 }
 
 input {
-  height: auto !important;
+  height: auto;
 }
 
 /* forms */
@@ -210,7 +210,7 @@ input {
 
 .users {
   list-style: none;
-  margine: 0;
+  margin: 0;
   li {
   overflow: auto;
   padding: 10px 0;
@@ -218,8 +218,23 @@ input {
   }
 }  
 
+.flexQuestions {
+  height: 36px;
+}
 
+.flexAnswers {
+  height: 30px;
+}
 
+.questions {
+  list-style: none;
+  margin: 0px;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
 
 
 

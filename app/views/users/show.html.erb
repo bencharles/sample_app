@@ -3,9 +3,19 @@
   <aside class="col-md-4">
     <section class="user_info">
       <h1>
-        <%= gravatar_for @user %>
+        <%# <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <% if @questions.count > 0 %> 
+        <div>
+          <h2 style="float: left; margin-bottom: 0px">Questions</h2>
+          <br><br>
+          <u1 class="questions">
+            <% @pullAnswers = false %>
+            <%= render @questions %>
+          </u1>
+        </div>
+      <% end %>
     </section>
   </aside>
 </div>
