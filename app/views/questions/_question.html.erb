@@ -11,13 +11,13 @@
           
         <% if @pullAnswers %>
           <% @answers = Answer.where(ques_id: question.id) %>
-          
+
           <% if !@answers.nil? && @answers.count > 0 %>
             <div style="margin-left: 15px;">
                 <%= render @answers %>
             </div>
           <% end %> 
-          
+
           <div>
             <%= form_for(@answer, url: answers_create_path(ques_id: question.id)) do |f| %>
               <%= f.text_field :content, :class=>"flexAnswers col-md-10" %>
