@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def show
   	@user = User.find(params[:id])
     @questions = Question.where(user_id: params[:id])
+    @answers = Answer.where(user_id: params[:id])
   end 
 
   def new
@@ -19,8 +20,8 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
   		log_in @user
-  		flash[:success] = "Welcome to the Sample App!"
-  		redirect_to @user
+  		flash[:success] = "Welcome to the UVA Forum!"
+  		redirect_to categories_path
   	else
   		render 'new'
   	end 
