@@ -14,9 +14,8 @@ gem 'turbolinks',   '2.3.0'
 gem 'jbuilder',     '2.2.3'
 gem 'tzinfo'
 gem 'tzinfo-data'
-gem 'sdoc',         '0.4.0',
-
-group: :doc
+gem 'sdoc',         '0.4.0'
+gem 'pry-remote',	'0.1.8'
 
 group :development, :test do
 	gem 'sqlite3',     '1.3.12'
