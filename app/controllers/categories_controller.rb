@@ -66,6 +66,24 @@ class CategoriesController < ApplicationController
     @question = Question.new
     @questions = Question.where(category: "sts")
   end
+
+  def esc
+    @answer = Answer.new
+    @question = Question.new
+    @questions = Question.where(category: "esc")
+  end
+
+  def thetatau
+    @answer = Answer.new
+    @question = Question.new
+    @questions = Question.where(category: "thetatau")
+  end
+
+  def ulink
+    @answer = Answer.new
+    @question = Question.new
+    @questions = Question.where(category: "ulink")
+  end
   
   def create
     @question = Question.new

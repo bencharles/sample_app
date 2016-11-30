@@ -1,0 +1,26 @@
+<h1><b><font color="black"> ULINK </font></b></h1>
+<h3>About Us</h3>
+<p>ULink is an academic peer advising program run through U.Va.'s Student Council. ULink aims to match first years with upperclassmen peer advisors to discussclass and major choices, academic resources, and students' academic paths at the University. Students meet with their academic advisor throughout their first year, especially at important junctures such as class selection. </p>
+
+<p>For organizations and student groups that already have advising programs, ULink may serve as an optional supplement, or complement, for the student. The program does not replace these specialized advising programs and will operate with and develop partnerships with such programs. </p>
+
+<br>
+
+<h4>Ask any question about ULINK here!</h4>
+
+<%= form_for(@question, url: categories_create_path(category: "ulink")) do |f| %>
+<div class="row" style="overflow: hidden;">
+  <%= f.text_field :content, :class=>"flexQuestions col-md-10" %>
+  <%= f.submit "Ask!", class:"flexQuestions btn btn-primary col-md-2" %>
+</div>
+<% end %>
+
+<% if !@questions.nil? %>
+  <div>
+    <u1 class="questions">
+      <% @pullAnswers = true %>
+      <%= render @questions %>
+    </u1>
+  </div>
+<% end %> 
+

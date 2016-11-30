@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   get 'categories/mechanical'
   get 'categories/systems'
   get 'categories/sts'
+  get 'categories/esc'
+  get 'categories/thetatau'
+  get 'categories/ulink'
 
   get 'questions/index'
 
