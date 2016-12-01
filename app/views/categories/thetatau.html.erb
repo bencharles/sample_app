@@ -1,0 +1,24 @@
+<h1><b><font color="black"> Theta Tau </font> </b> </h1>
+<h3>About Us</h3>
+<p>The purpose of Theta Tau is to develop and maintain a high standard of professional interest among its members, and to unite them in a strong bond of fraternal fellowship. Theta Tau is the oldest and largest professional engineering fraternity in the United States, with a diverse membership of men and women studying engineering at more than 40 campuses.</p>
+
+<br>
+
+<h4>Ask any question about Theta Tau here!</h4>
+
+<%= form_for(@question, url: categories_create_path(category: "thetatau")) do |f| %>
+<div class="row" style="overflow: hidden;">
+  <%= f.text_field :content, :class=>"flexQuestions col-md-10" %>
+  <%= f.submit "Ask!", class:"flexQuestions btn btn-primary col-md-2" %>
+</div>
+<% end %>
+
+<% if !@questions.nil? %>
+  <div>
+    <u1 class="questions">
+      <% @pullAnswers = true %>
+      <%= render @questions %>
+    </u1>
+  </div>
+<% end %> 
+

@@ -1,0 +1,26 @@
+<h1><b><font color="black"> Engineering Student Council </font></b></h1>
+<h3>About Us</h3>
+<p>Engineering Student Council (ESC) is a Special Status Organization of the University of Virginia and the representative body for undergraduate students of the School of Engineering and Applied Science (SEAS). ESC provides a cohesive voice for the school’s undergraduate student body. The members of the council are entrusted with maintaining concern for SEAS students’ opinions and needs. </p>
+
+<p>ESC members engage in direct and regular communication with the SEAS administration and faculty. Members serve on administrative and faculty committees and collaborate with Professors and Administrators in the planning and execution of events and programs. Throughout, the council serves as a learning experience, providing opportunities for increased responsibilities and professional development. </p>
+
+<br>
+
+<h4>Ask any question about the Engineering Student Council here!</h4>
+
+<%= form_for(@question, url: categories_create_path(category: "esc")) do |f| %>
+<div class="row" style="overflow: hidden;">
+  <%= f.text_field :content, :class=>"flexQuestions col-md-10" %>
+  <%= f.submit "Ask!", class:"flexQuestions btn btn-primary col-md-2" %>
+</div>
+<% end %>
+
+<% if !@questions.nil? %>
+  <div>
+    <u1 class="questions">
+      <% @pullAnswers = true %>
+      <%= render @questions %>
+    </u1>
+  </div>
+<% end %> 
+

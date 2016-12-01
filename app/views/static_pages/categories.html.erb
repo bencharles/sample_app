@@ -1,5 +1,5 @@
 <% provide(:title, 'Categories') %>
-<h1>Categories</h1>
+<h1>Majors</h1>
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
@@ -20,4 +20,20 @@
     </div>
   </div>
 </div>
+<h1>CIOs</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h4> <%= link_to("Engineering Student Council", categories_esc_path) %> </h4>
+      <h4> <%= link_to("ULink", categories_ulink_path) %> </h4>
+    </div>
+    <div class="col-sm-4">
+      <h4> <%= link_to("Society of Women Engineers", categories_swe_path) %> </h4>
+    </div>
+    <div class="col-sm-4">
+      <h4> <%= link_to("Theta Tau", categories_thetatau_path) %> </h4>
+    </div>
+  </div>
+</div>
+<br>
 <h3> <b> <center> <%= link_to("STS 2500 Projects", categories_sts_path, {style: "color: blue"}) %> </center> </b> </h3>
