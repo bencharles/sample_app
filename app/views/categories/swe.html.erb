@@ -1,0 +1,30 @@
+<h1><b><font color="black"> Society of Women's Engineers </font></b></h1>
+<h3>About Us</h3>
+<p>The Society of Women Engineers is a professional organization that aims to support and promote women in achieving their full potential in engineering careers. The SWE section at UVA has three areas of focus: outreach, professional development, and community building. </p>
+
+<p>SWE at UVA has outreach programs for girls at the elementary, middle, and high school levels, all of which aim to inspire interest in engineering fields through hands-on activities, design challenges, tours, and speakers. </p>
+
+<p>We support the professional development of our members through a variety of events including interviewing workshops, resume reviews, major advising, company information sessions, and the national and regional SWE conferences. </p>
+
+<p>We aim to foster a strong sense of community for our members through our mentorship family program, which encourages involvement and cross-class interaction. Additionally, we host many fun social events throughout the year, including pumpkin painting, apple picking, hiking, and stress-busting exercise classes. These events provide opportunities for our members to get to know each other and encourage collaboration in an environment beyond the classroom. </p>
+
+<br>
+
+<h4>Ask any question about the Society of Women's Engineers here!</h4>
+
+<%= form_for(@question, url: categories_create_path(category: "swe")) do |f| %>
+<div class="row" style="overflow: hidden;">
+  <%= f.text_field :content, :class=>"flexQuestions col-md-10" %>
+  <%= f.submit "Ask!", class:"flexQuestions btn btn-primary col-md-2" %>
+</div>
+<% end %>
+
+<% if !@questions.nil? %>
+  <div>
+    <u1 class="questions">
+      <% @pullAnswers = true %>
+      <%= render @questions %>
+    </u1>
+  </div>
+<% end %> 
+
